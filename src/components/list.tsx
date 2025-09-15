@@ -4,8 +4,8 @@ import ListItem from "./listItem"
 
 export default function List({ data, type }: ListProps) {
   return (
-    <div>
-      <h1 className="font-semibold text-3xl">
+    <div className="flex flex-col gap-4">
+      <h1 className="font-semibold text-xl">
         {type === "movie" ? "Movies" : "TV Shows"}
       </h1>
 

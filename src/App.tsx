@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import MoviesAPI from "./utils/tmdb-api"
 import List from "./components/list"
-import logo from "./assets/netflix-logo.svg"
 import Hero from "./components/hero"
 
 function App() {
@@ -22,15 +21,15 @@ function App() {
 
   return (
     <div className="bg-black text-white h-fit flex flex-col gap-10">
-      <img src={logo} width={150} />
-
       <Hero movie={movies[0]} />
 
-      <p>Watchlist</p>
+      <div className="px-10 flex flex-col gap-5">
+        {/* <p>Watchlist</p> */}
 
-      <List data={movies.slice(1)} type="movie" />
+        <List data={movies.slice(1)} type="movie" />
 
-      <List data={shows} type="tv" />
+        <List data={shows} type="tv" />
+      </div>
     </div>
   )
 }
