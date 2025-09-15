@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import MoviesAPI from "./utils/tmdb-api"
 import List from "./components/list"
+import logo from "./assets/netflix-logo.svg"
+import Hero from "./components/hero"
 
 function App() {
   const [movies, setMovies] = useState([])
@@ -19,17 +21,17 @@ function App() {
   }, [])
 
   return (
-    <>
-      <h1>Netflix</h1>
+    <div className="bg-black text-white h-fit flex flex-col gap-10">
+      <img src={logo} width={150} />
 
-      <p>Hero Section</p>
+      <Hero movie={movies[0]} />
 
       <p>Watchlist</p>
 
-      <List data={movies} type="movie" />
+      <List data={movies.slice(1)} type="movie" />
 
       <List data={shows} type="tv" />
-    </>
+    </div>
   )
 }
 

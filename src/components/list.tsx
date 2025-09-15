@@ -8,7 +8,7 @@ export default function List({ data, type }: ListProps) {
         {type === "movie" ? "Movies" : "TV Shows"}
       </h1>
 
-      <ul className="flex gap-2">
+      <ul className="flex gap-2 overflow-scroll">
         {type === "movie"
           ? data.map((item) => {
               return (

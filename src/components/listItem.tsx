@@ -1,9 +1,5 @@
-type ListItemProps = {
-  path: string
-  titleType: string
-}
-
-const IMG_BASE_URL = "https://image.tmdb.org/t/p/original"
+import { IMG_BASE_URL } from "../utils/constants"
+import type { ListItemProps } from "../utils/types"
 
 export default function ListItem({ path, titleType }: ListItemProps) {
   return (

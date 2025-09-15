@@ -43,3 +43,12 @@ export type ListProps =
       data: TVShow[]
       type: "tv"
     }
+
+export type ListItemProps = {
+  path: string
+  titleType: string
+}
+
+export type HeroProps = {
+  movie: Movie
+}
