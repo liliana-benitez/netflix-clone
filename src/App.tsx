@@ -1,4 +1,23 @@
+import { useEffect, useState } from "react"
+import MoviesAPI from "./utils/tmdb-api"
+import List from "./components/list"
+
 function App() {
+  const [movies, setMovies] = useState([])
+  const [shows, setShows] = useState([])
+
+  async function fetchData() {
+    const movieList = await MoviesAPI.getMovies()
+    setMovies(movieList)
+
+    const showList = await MoviesAPI.getTVShows()
+    setShows(showList)
+  }
+
+  useEffect(() => {
+    fetchData()
+  }, [])
+
   return (
     <>
       <h1>Netflix</h1>
@@ -7,11 +26,9 @@ function App() {
 
       <p>Watchlist</p>
 
-      <p>Movies</p>
-      <p>Movies List</p>
+      <List data={movies} type="movie" />
 
-      <p>TV Shows</p>
-      <p>TV Shows List</p>
+      <List data={shows} type="tv" />
     </>
   )
 }
