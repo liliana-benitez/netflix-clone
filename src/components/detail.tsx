@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { IMG_BASE_URL } from "../utils/constants"
 import type { Movie, TVShow } from "../utils/types"
 import moment from "moment"
-import { AspectRatio } from "./ui/aspect-ratio"
+import logo from "../assets/netflix-logo.svg"
 
 export default function Detail() {
   const [item, setItem] = useState<Movie | TVShow | null>(null)
@@ -36,12 +36,20 @@ export default function Detail() {
   return (
     <div className="bg-black text-white h-screen flex flex-col gap-4">
       {/* BACKDROP + POSTER */}
-      <div className="relative w-full h-[40vh]">
+      <div className="relative w-full h-[50vh]">
         {/* BACKDROP */}
         <img
           className="w-full h-full object-cover object-top"
           src={`${IMG_BASE_URL}/${item.backdrop_path}`}
           alt="Backdrop"
+        />
+
+        {/* logo */}
+        <img
+          className="absolute top-5 left-10 z-10"
+          src={logo}
+          width={110}
+          alt="logo"
         />
 
         {/* Top fade */}
