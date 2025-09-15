@@ -24,7 +24,7 @@ function App() {
       <Hero movie={movies[0]} />
 
       <div className="px-10 flex flex-col gap-5">
-        {/* <p>Watchlist</p> */}
+        <p>Watchlist</p>
 
         <List data={movies.slice(1)} type="movie" />
 
