@@ -5,14 +5,16 @@ export default function List({ data, type }: ListProps) {
 
   return (
     <div>
-      <h1>{type === "movie" ? "Movies" : "TV Shows"}</h1>
+      <h1 className="font-semibold text-3xl">
+        {type === "movie" ? "Movies" : "TV Shows"}
+      </h1>
 
-      <ul>
+      <ul className="flex gap-2">
         {type === "movie"
           ? data.map((item) => {
               return (
                 <li key={item.id}>
-                  <div>
+                  <div className="w-[200px]">
                     <img src={`${IMG_BASE_URL}/${item.backdrop_path}`} />
                     <p>{item.title}</p>
                   </div>
@@ -22,7 +24,7 @@ export default function List({ data, type }: ListProps) {
           : data.map((item) => {
               return (
                 <li key={item.id}>
-                  <div>
+                  <div className="w-[200px]">
                     <img src={`${IMG_BASE_URL}/${item.backdrop_path}`} />
                     <p>{item.name}</p>
                   </div>
