@@ -26,11 +26,11 @@ const MoviesAPI = {
   },
 
   async getMovie(id: number) {
-    return fetchData(`${BASE_URL}/trending/movie/${id}?api_key=${API_TOKEN}`)
+    return fetchData(`${BASE_URL}/movie/${id}?api_key=${API_TOKEN}`)
   },
 
   async getTVShow(id: number) {
-    return fetchData(`${BASE_URL}/trending/tv/${id}?api_key=${API_TOKEN}`)
+    return fetchData(`${BASE_URL}/tv/${id}?api_key=${API_TOKEN}`)
   }
 }
 
