@@ -1,8 +1,7 @@
 import type { ListProps } from "../utils/types"
+import ListItem from "./listItem"
 
 export default function List({ data, type }: ListProps) {
-  const IMG_BASE_URL = "https://image.tmdb.org/t/p/original"
-
   return (
     <div>
       <h1 className="font-semibold text-3xl">
@@ -14,20 +13,14 @@ export default function List({ data, type }: ListProps) {
           ? data.map((item) => {
               return (
                 <li key={item.id}>
-                  <div className="w-[200px]">
-                    <img src={`${IMG_BASE_URL}/${item.backdrop_path}`} />
-                    <p>{item.title}</p>
-                  </div>
+                  <ListItem path={item.backdrop_path} titleType={item.title} />
                 </li>
               )
             })
           : data.map((item) => {
               return (
                 <li key={item.id}>
-                  <div className="w-[200px]">
-                    <img src={`${IMG_BASE_URL}/${item.backdrop_path}`} />
-                    <p>{item.name}</p>
-                  </div>
+                  <ListItem path={item.backdrop_path} titleType={item.name} />
                 </li>
               )
             })}
