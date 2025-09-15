@@ -6,7 +6,6 @@ export default function Hero({ movie }: HeroProps) {
     <div className="max-h-[400px]">
       {movie && (
         <div>
-          <p>{movie.title}</p>
           <img
             src={`${IMG_BASE_URL}/${movie.backdrop_path}`}
             className="h-[400px]"

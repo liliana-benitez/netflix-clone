@@ -1,3 +1,4 @@
+import { NavLink } from "react-router"
 import type { ListProps } from "../utils/types"
 import ListItem from "./listItem"
 
@@ -13,14 +14,21 @@ export default function List({ data, type }: ListProps) {
           ? data.map((item) => {
               return (
                 <li key={item.id}>
-                  <ListItem path={item.backdrop_path} titleType={item.title} />
+                  <NavLink to={`/${type}/${item.id}`}>
+                    <ListItem
+                      path={item.backdrop_path}
+                      titleType={item.title}
+                    />
+                  </NavLink>
                 </li>
               )
             })
           : data.map((item) => {
               return (
                 <li key={item.id}>
-                  <ListItem path={item.backdrop_path} titleType={item.name} />
+                  <NavLink to={`/${type}/${item.id}`}>
+                    <ListItem path={item.backdrop_path} titleType={item.name} />
+                  </NavLink>
                 </li>
               )
             })}
