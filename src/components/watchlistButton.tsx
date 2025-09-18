@@ -1,11 +1,7 @@
 import { Button } from "./ui/button"
-import type { Movie, TVShow } from "@/utils/types"
+import type { Movie, TVShow, watchlistButtonProps } from "@/utils/types"
 import { useWatchlist } from "@/utils/useWatchlist"
 import type { SyntheticEvent } from "react"
-
-type watchlistButtonProps = {
-  item: Movie | TVShow
-}
 
 export default function WatchlistButton({ item }: watchlistButtonProps) {
   const [watchlist, setWatchlist] = useWatchlist()

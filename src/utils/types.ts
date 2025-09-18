@@ -1,4 +1,4 @@
-import type { Dispatch, SetStateAction } from "react"
+import type { Dispatch, ReactNode, SetStateAction } from "react"
 
 export interface Movie {
   adult: boolean
@@ -64,3 +64,11 @@ export type WatchlistContextType = [
   (Movie | TVShow)[],
   Dispatch<SetStateAction<(Movie | TVShow)[]>>
 ]
+
+export type WatchlistProviderProps = {
+  children: ReactNode
+}
+
+export type watchlistButtonProps = {
+  item: Movie | TVShow
+}

@@ -1,10 +1,6 @@
-import type { Movie, TVShow } from "@/utils/types"
+import type { Movie, TVShow, WatchlistProviderProps } from "@/utils/types"
 import { WatchlistContext } from "@/utils/watchlistContext"
-import { useState, type ReactNode } from "react"
-
-type WatchlistProviderProps = {
-  children: ReactNode
-}
+import { useState } from "react"
 
 export default function WatchlistProvider({
   children
