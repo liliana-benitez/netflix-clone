@@ -45,6 +45,10 @@ export type ListProps =
       data: TVShow[]
       type: "tv"
     }
+  | {
+      data: (Movie | TVShow)[]
+      type: "watchlist"
+    }
 
 export type ListItemProps = {
   path: string
