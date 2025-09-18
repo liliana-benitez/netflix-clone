@@ -18,6 +18,7 @@ export default function List({ data, type }: ListProps) {
                     <ListItem
                       path={item.backdrop_path}
                       titleType={item.title}
+                      item={item}
                     />
                   </NavLink>
                 </li>
@@ -27,7 +28,11 @@ export default function List({ data, type }: ListProps) {
               return (
                 <li key={item.id}>
                   <NavLink to={`/${type}/${item.id}`}>
-                    <ListItem path={item.backdrop_path} titleType={item.name} />
+                    <ListItem
+                      path={item.backdrop_path}
+                      titleType={item.name}
+                      item={item}
+                    />
                   </NavLink>
                 </li>
               )

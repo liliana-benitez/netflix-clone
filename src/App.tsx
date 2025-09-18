@@ -1,13 +1,13 @@
-import { useContext, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import MoviesAPI from "./utils/tmdb-api"
 import List from "./components/list"
 import Hero from "./components/hero"
-import { WatchlistContext } from "./utils/watchlistContext"
+import { useWatchlist } from "./utils/useWatchlist"
 
 function App() {
   const [movies, setMovies] = useState([])
   const [shows, setShows] = useState([])
-  const [watchlist, setWatchlist] = useContext(WatchlistContext)
+  const [watchlist] = useWatchlist()
 
   async function fetchData() {
     const movieList = await MoviesAPI.getMovies()
