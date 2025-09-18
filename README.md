@@ -16,18 +16,21 @@ A front-end Netflix clone built with Vite + TypeScript and React Context, using 
 ## 🎬 Live Demo
 Try it here: [Netflix Clone](https://notflix-cloneflix.netlify.app/)
 
-## 💻 Installation (if you want to run it locally)
-1. Clone the repo:
+## 💻 Installation & Setup (if you want to run it locally)
+
+1. Create an API key from [TMDB](https://developer.themoviedb.org/docs/getting-started).
+2. Clone the repo:
    ```bash
    git clone https://github.com/liliana-benitez/netflix-clone.git
    ```
+3. Duplicate the `.env.default` file, change the name to `.env`, then paste your `TMDB API key`.
 
-2. Install dependencies:
+4. Install dependencies:
    ```bash
    yarn
    ```
 
-3. Start the dev server:
+5. Start the dev server:
    ```bash
    yarn dev
    ```
