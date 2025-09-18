@@ -3,6 +3,7 @@ import { IMG_BASE_URL } from "../utils/constants"
 import logo from "../assets/netflix-logo.svg"
 import { NavLink } from "react-router"
 import WatchlistButton from "./watchlistButton"
+import moment from "moment"
 
 export default function Hero({ movie }: HeroProps) {
   return (
@@ -32,10 +33,13 @@ export default function Hero({ movie }: HeroProps) {
 
           <div className="absolute bottom-5 z-10 flex flex-col gap-4 px-10">
             <p className="font-semibold text-3xl">{movie.title}</p>
-            <p className="text-gray-600 font-semibold">
-              {/* Out {date ? moment(date).format("dddd MMM Do") : "Date unknown"} */}
+            <p className="text-gray-400 font-semibold">
+              Out{" "}
+              {movie.release_date
+                ? moment(movie.release_date).format("dddd MMM Do")
+                : "Date unknown"}
             </p>
-            <p className="text-xs sm:w-[400px]">{movie.overview}</p>
+            <p className="text-xs lg:w-[800px]">{movie.overview}</p>
 
             <div className="flex gap-4">
               <NavLink to={`/movie/${movie.id}`}>
