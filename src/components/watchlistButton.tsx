@@ -44,7 +44,7 @@ export default function WatchlistButton({ item, type }: watchlistButtonProps) {
         onClick={(e) => {
           toggleWatchlist(e, item)
         }}
-        className="font-semibold text-shaow-lg"
+        className="font-semibold text-shaow-lg hover:cursor-pointer"
       >
         {checkItem(item) ? "✓" : "+"}
       </button>
@@ -57,7 +57,7 @@ export default function WatchlistButton({ item, type }: watchlistButtonProps) {
         onClick={(e) => {
           toggleWatchlist(e, item)
         }}
-        className="bg-neutral-700 rounded-md px-2 py-1 opacity-70"
+        className="bg-neutral-700 rounded-md px-2 py-1 opacity-70 hover:cursor-pointer"
       >
         {checkItem(item) ? "✓ Remove from watchlist" : " + Add to watchlist"}
       </button>

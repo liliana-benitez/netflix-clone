@@ -39,7 +39,7 @@ export default function Hero({ movie }: HeroProps) {
 
             <div className="flex gap-4">
               <NavLink to={`/movie/${movie.id}`}>
-                <button className="bg-neutral-700 rounded-md px-2 py-1 opacity-70">
+                <button className="bg-neutral-700 rounded-md px-2 py-1 opacity-70 hover:cursor-pointer">
                   More Info
                 </button>
               </NavLink>
