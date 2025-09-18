@@ -9,9 +9,10 @@ A front-end Netflix clone built with Vite + TypeScript and React Context, using 
 - Fun and easy way to keep track of what to watch next
 
 ## 🛠 Tech Stack
-**Frontend:** React + TypeScript + Vite + Moment.js
-**Styling:** Tailwind CSS
-**API:** TMDB
+- **Frontend:** React + TypeScript + Vite + Moment.js
+- **Styling:** Tailwind CSS
+- **API:** TMDB
+- **Deployment:** Netlify
 
 ## 🎬 Live Demo
 Try it here: [Netflix Clone](https://notflix-cloneflix.netlify.app/)
