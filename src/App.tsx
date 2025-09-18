@@ -1,11 +1,13 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import MoviesAPI from "./utils/tmdb-api"
 import List from "./components/list"
 import Hero from "./components/hero"
+import { WatchlistContext } from "./utils/watchlistContext"
 
 function App() {
   const [movies, setMovies] = useState([])
   const [shows, setShows] = useState([])
+  const [watchlist, setWatchlist] = useContext(WatchlistContext)
 
   async function fetchData() {
     const movieList = await MoviesAPI.getMovies()
@@ -24,7 +26,7 @@ function App() {
       <Hero movie={movies[0]} />
 
       <div className="px-10 flex flex-col gap-5">
-        <p>Watchlist</p>
+        <List data={watchlist} type="movie" />
 
         <List data={movies.slice(1)} type="movie" />
 
