@@ -22,7 +22,7 @@ function App() {
   }, [])
 
   return (
-    <div className="bg-black text-white h-fit flex flex-col gap-10">
+    <div className="bg-black text-white h-fit flex flex-col gap-10 pb-20">
       <Hero movie={movies[0]} />
 
       <div className="px-10 flex flex-col gap-5">

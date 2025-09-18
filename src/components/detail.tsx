@@ -76,10 +76,7 @@ export default function Detail() {
         <p className="text-xs sm:w-[400px]">{item.overview}</p>
 
         <div className="flex gap-4">
-          <button className="bg-gray-800 rounded-md px-2 py-1">
-            More Info
-          </button>
-          <button className="bg-gray-800 rounded-md px-2 py-1">
+          <button className="bg-neutral-700 rounded-md px-2 py-1 opacity-70">
             + Add to watchlist
           </button>
         </div>

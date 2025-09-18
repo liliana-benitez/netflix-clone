@@ -1,4 +1,3 @@
-import { Button } from "./ui/button"
 import type { Movie, TVShow, watchlistButtonProps } from "@/utils/types"
 import { useWatchlist } from "@/utils/useWatchlist"
 import type { SyntheticEvent } from "react"
@@ -28,12 +27,13 @@ export default function WatchlistButton({ item }: watchlistButtonProps) {
   }
 
   return (
-    <Button
+    <button
       onClick={(e) => {
         toggleWatchlist(e, item)
       }}
+      className="font-semibold text-shaow-lg"
     >
       +
-    </Button>
+    </button>
   )
 }
