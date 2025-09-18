@@ -71,4 +71,5 @@ export type WatchlistProviderProps = {
 
 export type watchlistButtonProps = {
   item: Movie | TVShow
+  type: "list" | "detail"
 }

@@ -2,7 +2,7 @@ import type { Movie, TVShow, watchlistButtonProps } from "@/utils/types"
 import { useWatchlist } from "@/utils/useWatchlist"
 import type { SyntheticEvent } from "react"
 
-export default function WatchlistButton({ item }: watchlistButtonProps) {
+export default function WatchlistButton({ item, type }: watchlistButtonProps) {
   const [watchlist, setWatchlist] = useWatchlist()
 
   function toggleWatchlist(e: SyntheticEvent, item: Movie | TVShow) {
@@ -26,14 +26,29 @@ export default function WatchlistButton({ item }: watchlistButtonProps) {
     }
   }
 
-  return (
-    <button
-      onClick={(e) => {
-        toggleWatchlist(e, item)
-      }}
-      className="font-semibold text-shaow-lg"
-    >
-      +
-    </button>
-  )
+  if (type === "list") {
+    return (
+      <button
+        onClick={(e) => {
+          toggleWatchlist(e, item)
+        }}
+        className="font-semibold text-shaow-lg"
+      >
+        +
+      </button>
+    )
+  }
+
+  if (type === "detail") {
+    return (
+      <button
+        onClick={(e) => {
+          toggleWatchlist(e, item)
+        }}
+        className="bg-neutral-700 rounded-md px-2 py-1 opacity-70"
+      >
+        + Add to watchlist
+      </button>
+    )
+  }
 }

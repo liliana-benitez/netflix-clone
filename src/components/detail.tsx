@@ -5,6 +5,7 @@ import { IMG_BASE_URL } from "../utils/constants"
 import type { Movie, TVShow } from "../utils/types"
 import moment from "moment"
 import logo from "../assets/netflix-logo.svg"
+import WatchlistButton from "./watchlistButton"
 
 export default function Detail() {
   const [item, setItem] = useState<Movie | TVShow | null>(null)
@@ -75,10 +76,8 @@ export default function Detail() {
         </p>
         <p className="text-xs sm:w-[400px]">{item.overview}</p>
 
-        <div className="flex gap-4">
-          <button className="bg-neutral-700 rounded-md px-2 py-1 opacity-70">
-            + Add to watchlist
-          </button>
+        <div>
+          <WatchlistButton item={item} type="detail" />
         </div>
       </div>
     </div>

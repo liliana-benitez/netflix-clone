@@ -14,7 +14,7 @@ export default function ListItem({ path, titleType, item }: ListItemProps) {
           <div className="absolute bottom-0 w-full">
             <div className="flex justify-between px-2 pb-2 items-end">
               <p className="text-shadow-lg font-semibold">{titleType}</p>
-              <WatchlistButton item={item} />
+              <WatchlistButton item={item} type="list" />
             </div>
           </div>
         </div>
