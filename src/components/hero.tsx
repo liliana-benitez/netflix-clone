@@ -1,6 +1,7 @@
 import type { HeroProps } from "../utils/types"
 import { IMG_BASE_URL } from "../utils/constants"
 import logo from "../assets/netflix-logo.svg"
+import { NavLink } from "react-router"
 
 export default function Hero({ movie }: HeroProps) {
   return (
@@ -36,9 +37,11 @@ export default function Hero({ movie }: HeroProps) {
             <p className="text-xs sm:w-[400px]">{movie.overview}</p>
 
             <div className="flex gap-4">
-              <button className="bg-neutral-700 rounded-md px-2 py-1 opacity-70">
-                More Info
-              </button>
+              <NavLink to={`/movie/${movie.id}`}>
+                <button className="bg-neutral-700 rounded-md px-2 py-1 opacity-70">
+                  More Info
+                </button>
+              </NavLink>
               <button className="bg-neutral-700 rounded-md px-2 py-1 opacity-70">
                 + Add to watchlist
               </button>
